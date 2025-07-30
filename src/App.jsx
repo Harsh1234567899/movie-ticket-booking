@@ -1,5 +1,5 @@
 import React from "react";
-import NevBar from "./components/Nevbar";
+import NevBar from "./components/NevBar";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
