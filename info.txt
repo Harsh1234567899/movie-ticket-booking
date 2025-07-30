@@ -1,0 +1,5 @@
+npm create vite@latest
+npm install
+npm install react-router-dom lucide-react // for icon // react-hot-toast // notification // react-player // vidios 
+
+clerk for login 
