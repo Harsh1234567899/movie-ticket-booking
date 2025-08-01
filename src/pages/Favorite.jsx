@@ -3,7 +3,7 @@ import { dummyShowsData } from "../assets/assets";
 import MovieCard from "../components/MovieCard";
 import BlureCircle from "../components/BlureCircle";
 
-const Movies = () => {
+const Favorite = () => {
     return dummyShowsData.length > 0 ? (
         <div className='relative my-20 mb-40 px-4 sm:px-8 md:px-16 lg:px-40 xl:px-44 overflow-visible min-h-[80vh]'>
 
@@ -24,4 +24,4 @@ const Movies = () => {
     );
 };
 
-export default Movies;
+export default Favorite;
