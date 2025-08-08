@@ -1,0 +1,18 @@
+npm create vite@latest
+npm install
+npm install react-router-dom lucide-react // for icon // react-hot-toast // notification // react-player // vidios 
+
+clerk for login 
+
+npm install express cors dotenv mongoose axios cloudinary // for backend
+- where cors is to connect any frontend url
+- axios for API 
+- cloudinary to store imaegis
+
+npm install nodemon --save-dev
+- development dependencies 
+
+mongodb atlas
+create account
+
+INNGEST for login any siggnup 
