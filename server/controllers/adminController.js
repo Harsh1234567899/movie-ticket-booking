@@ -4,7 +4,14 @@ import User from "../models/User.js"
 
 // api to check admin 
 export const isAdmin = async (req, res) => {
-    res.json({ success: true, isAdmin: true })
+    try {
+    const user = await clerkClient.users.getUser(req.auth.userId)
+    const isAdmin = user.publicMetadata?.role == "admin"
+    res.json({ success: true, isAdmin })
+  } catch (error) {
+    console.error(error)
+    res.json({ success: false, message: error.message })
+  }
 }
 // api to get daata 
 export const getDashboardData = async (req, res) => {
@@ -27,7 +34,7 @@ export const getDashboardData = async (req, res) => {
 }
 
 //api to get all shows
-export const getAllShows = async (res, req) => {
+export const getAllShows = async (req, res) => {
     try {
         const shows = await Show.find({ showDateTime: { $gte: new Date() } }).populate('movie').sort({ showDateTime: 1 })
         res.json({ success: true, shows })
@@ -37,7 +44,7 @@ export const getAllShows = async (res, req) => {
     }
 }
 //api to get all bookings
-export const getAllBookings = async (res, req) => {
+export const getAllBookings = async (req, res) => {
     try {
         const bookings = await Booking.find({}).populate('user').populate({
             path: "show",

@@ -9,7 +9,10 @@ import showRouter from './routes/showRoutes.js'
 import bookingRoutes from './routes/bookingRoutes.js'
 import adminRouter from './routes/adminRoutes.js'
 import userRouter from './routes/userRoutes.js'
-
+import { protectAdmin } from './middleware/auth.js'
+// import { protectAdmin } from './middleware/auth.js'
+// import { requireAdmin } from './middlewares/adminAuth.js'
+// import { ClerkExpressRequireAuth } from "@clerk/express";
 const app = express()
 const port = 3000
 
@@ -31,7 +34,7 @@ app.use('/api/show',showRouter)
 
 app.use('/api/booking',bookingRoutes)
 
-app.use('/api/admin',adminRouter)
+app.use('/api/admin',protectAdmin,adminRouter)
 
 app.use('/api/user',userRouter)
 
