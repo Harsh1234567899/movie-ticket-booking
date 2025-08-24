@@ -10,8 +10,7 @@ export const inngest = new Inngest({ id: "movie-ticket-booking" ,eventKey: proce
 const syncUserCreation = inngest.createFunction(
     {id: 'sync-user-from-clerk'},
     {event: 'clerk/user.created'},
-    // async ({event , step}) => {
-    async ({event }) => {
+    async ({event , step}) => {
         const {id , first_name , last_name , email_addresses , image_url} = event.data
         const userData = {
             _id: id,
@@ -21,10 +20,10 @@ const syncUserCreation = inngest.createFunction(
         }
         await User.create(userData)
 
-    //     await step.sendEvent({
-    //   name: "app/user.synced",
-    //   data: { id, email: userData.email }
-    // });
+        await step.sendEvent({
+      name: "app/user.synced",
+      data: { id, email: userData.email }
+    });
     }
 )
 
@@ -32,15 +31,14 @@ const syncUserCreation = inngest.createFunction(
 const syncUserDeletion = inngest.createFunction(
     {id: 'delete-user-with-clerk'},
     {event: 'clerk/user.deleted'},
-    // async ({event , step}) => {
-        async ({event }) => {
+    async ({event , step}) => {
         const {id} = event.data
         await User.findByIdAndDelete(id)
 
-    //     await step.sendEvent({
-    //   name: "app/user.synced",
-    //   data: { id, action: "deleted" }
-    // });
+        await step.sendEvent({
+      name: "app/user.synced",
+      data: { id, action: "deleted" }
+    });
     }
 )
 
@@ -48,8 +46,7 @@ const syncUserDeletion = inngest.createFunction(
 const syncUserUpdation = inngest.createFunction(
     {id: 'update-user-from-clerk'},
     {event: 'clerk/user.updated'},
-    // async ({event , step}) => {
-        async ({event }) => {
+    async ({event , step}) => {
         const {id , first_name , last_name , email_addresses , image_url} = event.data
         const userData = {
             _id: id,
@@ -58,10 +55,10 @@ const syncUserUpdation = inngest.createFunction(
             image: image_url
         }
         await User.findByIdAndUpdate(id, userData)
-    //     await step.sendEvent({
-    //   name: "app/user.synced",
-    //   data: { id, action: "updated" }
-    // });
+        await step.sendEvent({
+      name: "app/user.synced",
+      data: { id, action: "updated" }
+    });
     }
 )
 
