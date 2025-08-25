@@ -54,7 +54,7 @@ import { MenuIcon, SearchIcon, TicketPlus, XIcon } from 'lucide-react'
 import { useClerk, UserButton, useUser } from '@clerk/clerk-react'
 import { useAppContext } from '../context/AppContext'
 
-const Navbar = () => {
+const NavBar = () => {
 
  const [isOpen, setIsOpen] = useState(false)
  const {user} = useUser()
@@ -103,4 +103,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default NavBar

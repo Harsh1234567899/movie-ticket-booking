@@ -88,7 +88,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { dummyDateTimeData, dummyShowsData } from '../assets/assets'
-import BlurCircle from '../components/BlurCircle'
+import BlureCircle from '../components/BlureCircle'
 import { Heart, PlayCircleIcon, StarIcon } from 'lucide-react'
 import timeFormat from '../lib/timeFormat'
 import DateSelect from '../components/DateSelect'
@@ -142,7 +142,7 @@ const MovieDetails = () => {
         <img src={image_base_url + show.movie.poster_path} alt="" className='max-md:mx-auto rounded-xl h-104 max-w-70 object-cover'/>
 
         <div className='relative flex flex-col gap-3'>
-          <BlurCircle top="-100px" left="-100px"/>
+          <BlureCircle top="-100px" left="-100px"/>
           <p className='text-primary'>ENGLISH</p>
           <h1 className='text-4xl font-semibold max-w-96 text-balance'>{show.movie.title}</h1>
           <div className='flex items-center gap-2 text-gray-300'>

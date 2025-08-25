@@ -77,9 +77,9 @@
 import React, { useEffect, useState } from 'react'
 import { dummyBookingData } from '../assets/assets'
 import Loading from '../components/Loading'
-import BlurCircle from '../components/BlurCircle'
+import BlureCircle from '../components/BlureCircle'
 import timeFormat from '../lib/timeFormat'
-import { dateFormat } from '../lib/dateFormat'
+import { dateFormate } from '../lib/dateFormate'
 import { useAppContext } from '../context/AppContext'
 import { Link } from 'react-router-dom'
 
@@ -116,9 +116,9 @@ const MyBookings = () => {
 
   return !isLoading ? (
     <div className='relative px-6 md:px-16 lg:px-40 pt-30 md:pt-40 min-h-[80vh]'>
-      <BlurCircle top="100px" left="100px"/>
+      <BlureCircle top="100px" left="100px"/>
       <div>
-        <BlurCircle bottom="0px" left="600px"/>
+        <BlureCircle bottom="0px" left="600px"/>
       </div>
       <h1 className='text-lg font-semibold mb-4'>My Bookings</h1>
 
@@ -129,7 +129,7 @@ const MyBookings = () => {
             <div className='flex flex-col p-4'>
               <p className='text-lg font-semibold'>{item.show.movie.title}</p>
               <p className='text-gray-400 text-sm'>{timeFormat(item.show.movie.runtime)}</p>
-              <p className='text-gray-400 text-sm mt-auto'>{dateFormat(item.show.showDateTime)}</p>
+              <p className='text-gray-400 text-sm mt-auto'>{dateFormate(item.show.showDateTime)}</p>
             </div>
           </div>
 

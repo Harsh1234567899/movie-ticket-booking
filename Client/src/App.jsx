@@ -3,7 +3,7 @@
 // import { Route, Routes, useLocation } from "react-router-dom";
 // import Home from "./pages/Home";
 // import Movies from "./pages/Movies";
-// import MyBooking from "./pages/MyBoking";
+// import MyBoking from "./pages/MyBoking";
 // import MovieDetails from "./pages/MovieDetails";
 // import Favorite from "./pages/Favorite";
 // import SeatLayout from "./pages/SeatLayout";
@@ -31,7 +31,7 @@
 //       <Route path='/movies' element={<Movies/>} />
 //       <Route path='/movies/:id' element={<MovieDetails/>} />
 //       <Route path='/movies/:id/:date' element={<SeatLayout/>} />
-//       <Route path='/my-bookings' element={<MyBooking/>} />
+//       <Route path='/my-bookings' element={<MyBoking/>} />
 //       <Route path='/favorite' element={<Favorite/>} />
 
 //       <Route path='/admin/*' element={<Layout/>}>
@@ -54,13 +54,13 @@
 
 // export default App
 import React from 'react'
-import Navbar from './components/Navbar'
+import NevBar from './components/NevBar'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import Movies from './pages/Movies'
 import MovieDetails from './pages/MovieDetails'
 import SeatLayout from './pages/SeatLayout'
-import MyBookings from './pages/MyBookings'
+import MyBoking from './pages/MyBoking'
 import Favorite from './pages/Favorite'
 import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer'
@@ -82,13 +82,13 @@ const App = () => {
   return (
     <>
       <Toaster />
-      {!isAdminRoute && <Navbar/>}
+      {!isAdminRoute && <NevBar/>}
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/movies' element={<Movies/>} />
         <Route path='/movies/:id' element={<MovieDetails/>} />
         <Route path='/movies/:id/:date' element={<SeatLayout/>} />
-        <Route path='/my-bookings' element={<MyBookings/>} />
+        <Route path='/my-bookings' element={<MyBoking/>} />
         <Route path='/loading/:nextUrl' element={<Loading/>} />
 
         <Route path='/favorite' element={<Favorite/>} />
