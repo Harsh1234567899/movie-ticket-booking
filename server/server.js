@@ -38,4 +38,4 @@ app.use('/api/admin',protectAdmin,adminRouter)
 
 app.use('/api/user',userRouter)
 
-app.listen(port,()=> console.log(`server at http:://localhost:${port}`))
+app.listen(port,()=> console.log(`server at http://localhost:${port}`))

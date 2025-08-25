@@ -1,9 +1,10 @@
-import express from 'express'
-import { createBooking, getOccupiedSeats } from '../controllers/bookingController.js'
+import express from 'express';
+import { createBooking, getOccupiedSeats } from '../controllers/bookingController.js';
 
-const bookingRoutes = express.Router()
+const bookingRouter = express.Router();
 
-bookingRoutes.post('/create',createBooking)
-bookingRoutes.get('/seats/:showId',getOccupiedSeats)
 
-export default bookingRoutes
+bookingRouter.post('/create', createBooking);
+bookingRouter.get('/seats/:showId', getOccupiedSeats);
+
+export default bookingRouter;
