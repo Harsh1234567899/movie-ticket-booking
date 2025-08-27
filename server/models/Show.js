@@ -3,11 +3,12 @@ import mongoose from "mongoose";
 const showSchema =  new mongoose.Schema(
     {
         movie: {type: String , required: true , ref: 'Movie'},
-        showDateTime: {type: Date , required: true},
+        showDateTime: {type: String , required: true},
         showPrice: {type: String , required: true},
-        occupiedSeats: {type: Map,          // or Object
-            of: String,         // userId who booked the seat
-            default: {}},
+        // occupiedSeats: {type: String , default: {}},
+        occupiedSeats: {type: Map,              // store seat -> userId
+      of: String,
+      default: {}},
     }, {minimize: false}
 )
 

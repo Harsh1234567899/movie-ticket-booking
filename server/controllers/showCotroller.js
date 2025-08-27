@@ -243,7 +243,7 @@ export const getShow = async (req, res) =>{
         const dateTime = {};
 
         shows.forEach((show) => {
-            const date = show.showDateTime.toISOString().split("T")[0];
+            const date = show.showDateTime.toString().split("T")[0];
             if(!dateTime[date]){
                 dateTime[date] = []
             }
